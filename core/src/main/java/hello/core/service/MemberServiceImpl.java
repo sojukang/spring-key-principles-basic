@@ -1,6 +1,6 @@
 package hello.core.service;
 
-import hello.core.domain.Member;
+import hello.core.domain.member.Member;
 import hello.core.repository.MemberRepository;
 import hello.core.repository.MemoryMemberRepository;
 

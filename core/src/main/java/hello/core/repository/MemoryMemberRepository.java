@@ -3,7 +3,7 @@ package hello.core.repository;
 import java.util.HashMap;
 import java.util.Map;
 
-import hello.core.domain.Member;
+import hello.core.domain.member.Member;
 
 public class MemoryMemberRepository implements MemberRepository {
 

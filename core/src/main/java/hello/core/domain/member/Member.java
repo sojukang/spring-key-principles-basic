@@ -1,4 +1,4 @@
-package hello.core.domain;
+package hello.core.domain.member;
 
 public class Member {
 	private Long id;
