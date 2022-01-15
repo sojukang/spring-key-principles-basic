@@ -2,16 +2,27 @@ package hello.core.service;
 
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import hello.core.AppConfig;
 import hello.core.domain.order.Order;
 import hello.core.domain.member.Grade;
 import hello.core.domain.member.Member;
 
 public class OrderServiceTest {
 
-	MemberService memberService = new MemberServiceImpl();
-	OrderService orderService = new OrderServiceImpl();
+	// MemberService memberService = new MemberServiceImpl();
+	// OrderService orderService = new OrderServiceImpl();
+	MemberService memberService;
+	OrderService orderService;
+
+	@BeforeEach
+	public void beforeEach() {
+		AppConfig appConfig = new AppConfig();
+		memberService = appConfig.memberService();
+		orderService = appConfig.orderService();
+	}
 
 	@Test
 	public void createOrder() throws Exception {
@@ -25,5 +36,5 @@ public class OrderServiceTest {
 
 	    //then
 	    assertThat(order.getDiscountPrice()).isEqualTo(1000);
-	 }
+	}
 }
