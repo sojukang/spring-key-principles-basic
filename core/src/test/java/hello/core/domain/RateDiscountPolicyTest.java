@@ -5,6 +5,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import hello.core.domain.discount.RateDiscountPolicy;
 import hello.core.domain.member.Grade;
 import hello.core.domain.member.Member;
 
