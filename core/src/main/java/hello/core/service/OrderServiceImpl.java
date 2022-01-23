@@ -1,10 +1,14 @@
 package hello.core.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import hello.core.domain.discount.DiscountPolicy;
 import hello.core.domain.member.Member;
 import hello.core.domain.order.Order;
 import hello.core.repository.MemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 	// private MemberRepository memberRepository = new MemoryMemberRepository();
 	private MemberRepository memberRepository;
@@ -12,6 +16,7 @@ public class OrderServiceImpl implements OrderService {
 	// private DiscountPolicy discountPolicy = new RateDiscountPolicy(); //DIP, OCP 위반
 	private DiscountPolicy discountPolicy; //NPE 발생. Interface 만으로는 할 수 없다. -> 누군가 Client 에 구현 객체를 대신 생성해서 주입해줘야 함
 
+	@Autowired
 	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
 		this.memberRepository = memberRepository;
 		this.discountPolicy = discountPolicy;
