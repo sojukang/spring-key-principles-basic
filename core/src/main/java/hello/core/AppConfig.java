@@ -28,7 +28,8 @@ public class AppConfig {
 	@Bean
 	public OrderService orderService() {
 		System.out.println("call AppConfig.orderService");
-		return new OrderServiceImpl(memberRepository(), discountPolicy());
+		// return new OrderServiceImpl(memberRepository(), discountPolicy());
+		return null; //Setter DI test를 위한 코드
 	}
 
 	@Bean
