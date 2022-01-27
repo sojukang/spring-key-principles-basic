@@ -15,14 +15,15 @@ import lombok.RequiredArgsConstructor;
 public class LogDemoController {
 
 	private final LogDemoService logDemoService;
-	// private final MyLogger myLogger;
-	private final ObjectProvider<MyLogger> myLoggerProvider;
+	private final MyLogger myLogger;
+	// private final ObjectProvider<MyLogger> myLoggerProvider;
 
 	@RequestMapping("log-demo")
 	@ResponseBody //view 를 거치지 않고 문자를 그대로 보낸다
 	public String logDemo(HttpServletRequest request) throws InterruptedException { //java 에서 정의한 http 요청정보를 받을 수 있다
 		String requestURL = request.getRequestURI().toString();
-		MyLogger myLogger = myLoggerProvider.getObject(); //필요한 시점에
+		// MyLogger myLogger = myLoggerProvider.getObject(); //필요한 시점에
+		System.out.println("myLogger = " + myLogger.getClass());
 		myLogger.setRequestURL(requestURL);
 
 		myLogger.log("controller test");
